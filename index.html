@@ -2,87 +2,111 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Minimal Website with Gallery</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Ramen Restaurant + Companies Section</title>
+    <script src="scripts/main.js"></script>
     <link rel="stylesheet" href="styles/styles.css" />
   </head>
-
   <body>
-    <!-- Navigation Bar -->
+    <!-- Navbar -->
     <nav>
-      <a href="#about">About</a>
-      <a href="#menu">Menu</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#contact">Contact</a>
+      <div class="logo">Placeholder Logo</div>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#get-in-touch">Contact</a>
+      </div>
     </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+      <h1>Welcome to Ramen Paradise</h1>
+      <p>
+        Authentic homemade ramen noodles crafted with love and tradition.
+        Experience the taste of Japan, one bowl at a time.
+      </p>
+      <a href="#menu" class="cta-button">View Our Menu</a>
+    </div>
 
     <!-- About Section -->
     <section id="about">
       <h1>About Us</h1>
-      <p>This is the about section.</p>
+      <p>
+        At Ramen Paradise, we pride ourselves on crafting authentic, handmade
+        ramen noodles. Using only the freshest ingredients and traditional
+        techniques, we deliver a ramen experience like no other.
+      </p>
     </section>
 
     <!-- Menu Section -->
     <section id="menu">
-      <h1>Menu</h1>
-      <p>Explore our delicious offerings.</p>
+      <h1>Our Menu</h1>
+
+      <div class="menu-container">
+        <!-- Left arrow for menu -->
+        <button
+          class="menu-arrow menu-arrow-left"
+          onclick="previousMenuImage()"
+        >
+          &#10094;
+        </button>
+
+        <!-- Two side-by-side images -->
+        <img
+          src="https://via.placeholder.com/400x300"
+          alt="Menu Image 1"
+          onclick="openMenuFullscreen(0)"
+        />
+        <img
+          src="https://via.placeholder.com/400x300"
+          alt="Menu Image 2"
+          onclick="openMenuFullscreen(1)"
+        />
+
+        <!-- Right arrow for menu -->
+        <button class="menu-arrow menu-arrow-right" onclick="nextMenuImage()">
+          &#10095;
+        </button>
+      </div>
     </section>
 
-    <!-- Gallery Section -->
     <section id="gallery">
-      <h1>Gallery</h1>
-      <div class="image-marquee">
-        <img src="https://via.placeholder.com/300" alt="Dish 1" />
-        <img src="https://via.placeholder.com/300" alt="Dish 2" />
-        <img src="https://via.placeholder.com/300" alt="Dish 3" />
-        <img src="https://via.placeholder.com/300" alt="Dish 4" />
-        <img src="https://via.placeholder.com/300" alt="Dish 5" />
+      <div class="fullscreen-gallery">
+        <!-- Left Navigation Button -->
+        <button class="gallery-nav gallery-prev" onclick="prevGalleryImage()">
+          &#10094;
+        </button>
+
+        <!-- Fullscreen Image Display -->
+        <img
+          id="fullscreen-gallery-image"
+          src="https://via.placeholder.com/1920x1080"
+          alt="Ramen Dish"
+        />
+
+        <!-- Right Navigation Button -->
+        <button class="gallery-nav gallery-next" onclick="nextGalleryImage()">
+          &#10095;
+        </button>
       </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact">
+    <section id="get-in-touch">
       <h1>Contact Us</h1>
-      <form action="https://formspree.io/f/{your_form_id}" method="POST">
-        <label for="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          placeholder="Your Name"
-          required
-        />
-
-        <label for="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          placeholder="Your Email"
-          required
-        />
-
-        <label for="message">Message:</label>
-        <textarea
-          id="message"
-          name="message"
-          placeholder="Your Message"
-          required
-        ></textarea>
-
-        <button type="submit">Submit</button>
-      </form>
+      <div class="contact-form">
+        <form action="https://formspree.io/f/{your-form-id}" method="POST">
+          <input type="text" name="name" placeholder="Your Name" required />
+          <input type="email" name="email" placeholder="Your Email" required />
+          <textarea
+            name="message"
+            placeholder="Your Message"
+            rows="4"
+            required
+          ></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
     </section>
-
-    <!-- Fullscreen Modal -->
-    <div class="modal" id="modal">
-      <span class="close" id="closeModal">&times;</span>
-      <img src="" alt="Fullscreen Image" id="modalImage" />
-      <span class="prev" id="prevImage">&#10094;</span>
-      <span class="next" id="nextImage">&#10095;</span>
-    </div>
-
-    <!-- JavaScript -->
-    <script src="scripts/main.js"></script>
   </body>
 </html>
