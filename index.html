@@ -1,274 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Minimal Website with Gallery</title>
-    <style>
-        /* Basic styles for the entire body */
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
+    <link rel="stylesheet" href="styles/styles.css" />
+  </head>
 
-        /* Styling for the navigation bar */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #333;
-            color: white;
-            padding: 1rem;
-            z-index: 1000;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap; /* Ensures responsiveness for smaller screens */
-        }
-
-        /* Links in the navigation bar */
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            transition: color 0.3s; /* Smooth transition for hover effect */
-        }
-
-        /* Hover effect for navigation links */
-        nav a:hover {
-            color: #ddd;
-        }
-
-        /* Smooth scrolling effect for anchor links */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Basic styling for all sections */
-        section {
-            padding: 100px 20px;
-            margin-top: 50px; /* Space for the fixed navigation bar */
-        }
-
-        /* Background colours for each section */
-        #about { background: #eef2f3; }
-        #menu { background: #ddd; }
-        #gallery { background: #f7f7f7; }
-        #contact { background: #ccc; }
-
-        /* Form styling */
-        form {
-            max-width: 400px;
-            margin: 20px auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            background-color: #f9f9f9;
-        }
-
-        /* Styling for form labels */
-        label {
-            font-weight: bold;
-            display: block;
-            margin: 10px 0 5px;
-        }
-
-        /* Input and textarea fields */
-        input, textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            border: 1px solid #ccc;
-            border-radius: 3px;
-        }
-
-        /* Focus effect for form fields */
-        input:focus, textarea:focus {
-            border-color: #333;
-            outline: none;
-            box-shadow: 0 0 5px rgba(51, 51, 51, 0.5);
-        }
-
-        /* Submit button styling */
-        button {
-            padding: 10px 20px;
-            background-color: #333;
-            color: white;
-            border: none;
-            border-radius: 3px;
-            cursor: pointer;
-        }
-
-        /* Hover effect for the submit button */
-        button:hover {
-            background-color: #555;
-        }
-
-        /* Scrollable marquee styles */
-        .image-marquee {
-            display: flex;
-            overflow-x: scroll;
-            gap: 10px;
-            padding: 10px 0;
-            scroll-behavior: smooth;
-        }
-
-        .image-marquee img {
-            height: 150px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: transform 0.2s ease-in-out;
-        }
-
-        .image-marquee img:hover {
-            transform: scale(1.1);
-        }
-
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            z-index: 10000;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal img {
-            max-width: 80%;
-            max-height: 80%;
-            border-radius: 10px;
-        }
-
-        .modal .close {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            font-size: 24px;
-            color: white;
-            cursor: pointer;
-        }
-
-        .modal .prev, .modal .next {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            font-size: 36px;
-            color: white;
-            cursor: pointer;
-        }
-
-        .modal .prev {
-            left: 10%;
-        }
-
-        .modal .next {
-            right: 10%;
-        }
-
-    </style>
-</head>
-<body>
+  <body>
     <!-- Navigation Bar -->
     <nav>
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#gallery">Gallery</a>
-        <a href="#contact">Contact</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
     </nav>
 
     <!-- About Section -->
     <section id="about">
-        <h1>About Us</h1>
-        <p>This is the about section.</p>
+      <h1>About Us</h1>
+      <p>This is the about section.</p>
     </section>
-    
+
     <!-- Menu Section -->
     <section id="menu">
-        <h1>Menu</h1>
-        <p>Explore our delicious offerings.</p>
+      <h1>Menu</h1>
+      <p>Explore our delicious offerings.</p>
     </section>
-    
+
     <!-- Gallery Section -->
     <section id="gallery">
-        <h1>Gallery</h1>
-        <div class="image-marquee">
-            <img src="https://via.placeholder.com/300" alt="Dish 1">
-            <img src="https://via.placeholder.com/300" alt="Dish 2">
-            <img src="https://via.placeholder.com/300" alt="Dish 3">
-            <img src="https://via.placeholder.com/300" alt="Dish 4">
-            <img src="https://via.placeholder.com/300" alt="Dish 5">
-        </div>
+      <h1>Gallery</h1>
+      <div class="image-marquee">
+        <img src="https://via.placeholder.com/300" alt="Dish 1" />
+        <img src="https://via.placeholder.com/300" alt="Dish 2" />
+        <img src="https://via.placeholder.com/300" alt="Dish 3" />
+        <img src="https://via.placeholder.com/300" alt="Dish 4" />
+        <img src="https://via.placeholder.com/300" alt="Dish 5" />
+      </div>
     </section>
 
     <!-- Contact Section -->
     <section id="contact">
-        <h1>Contact Us</h1>
-        <form action="https://formspree.io/f/{your_form_id}" method="POST">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Your Name" required>
+      <h1>Contact Us</h1>
+      <form action="https://formspree.io/f/{your_form_id}" method="POST">
+        <label for="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your Name"
+          required
+        />
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Your Email" required>
+        <label for="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="Your Email"
+          required
+        />
 
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+        <label for="message">Message:</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Your Message"
+          required
+        ></textarea>
 
-            <button type="submit">Submit</button>
-        </form>
+        <button type="submit">Submit</button>
+      </form>
     </section>
 
     <!-- Fullscreen Modal -->
     <div class="modal" id="modal">
-        <span class="close" id="closeModal">&times;</span>
-        <img src="" alt="Fullscreen Image" id="modalImage">
-        <span class="prev" id="prevImage">&#10094;</span>
-        <span class="next" id="nextImage">&#10095;</span>
+      <span class="close" id="closeModal">&times;</span>
+      <img src="" alt="Fullscreen Image" id="modalImage" />
+      <span class="prev" id="prevImage">&#10094;</span>
+      <span class="next" id="nextImage">&#10095;</span>
     </div>
 
     <!-- JavaScript -->
-    <script>
-        const images = document.querySelectorAll('.image-marquee img');
-        const modal = document.getElementById('modal');
-        const modalImage = document.getElementById('modalImage');
-        const closeModal = document.getElementById('closeModal');
-        const prevImage = document.getElementById('prevImage');
-        const nextImage = document.getElementById('nextImage');
-
-        let currentImageIndex = 0;
-
-        images.forEach((image, index) => {
-            image.addEventListener('click', () => {
-                modal.style.display = 'flex';
-                modalImage.src = image.src;
-                currentImageIndex = index;
-            });
-        });
-
-        closeModal.addEventListener('click', () => {
-            modal.style.display = 'none';
-        });
-
-        prevImage.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
-            modalImage.src = images[currentImageIndex].src;
-        });
-
-        nextImage.addEventListener('click', () => {
-            currentImageIndex = (currentImageIndex + 1) % images.length;
-            modalImage.src = images[currentImageIndex].src;
-        });
-
-        modal.addEventListener('click', (e) => {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-            }
-        });
-    </script>
-</body>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>
